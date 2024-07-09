@@ -1,19 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> v[100];
 int main()
 {
     int n,e;
     cin>>n>>e;
+    vector<pair<int,int>>v;
     while(e--){
         int a,b;
         cin>>a>>b;
-        v[a].push_back(b);
-        v[b].push_back(a);
+        v.push_back({a,b});
     }
-    int N; cin>>N;
-    for(int i=0; i<n; i++){
-        if(i==N)cout<<v[i].size();
+    for(pair<int,int>p: v){
+        cout<<p.first<<" "<<p.second<<endl;
     }
     return 0;
 }
